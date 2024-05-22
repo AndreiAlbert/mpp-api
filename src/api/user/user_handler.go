@@ -49,7 +49,7 @@ func (h *UserHandler) LoginUser(c *gin.Context) {
 		Jwt:   token,
 	}
 	maxAge := 24 * 60 * 60
-	c.SetCookie("jwt", token, maxAge, "/", "", true, false)
+	c.SetCookie("jwt", token, maxAge, "/", ".onrender.com", true, true)
 	c.JSON(http.StatusOK, loginResp)
 }
 
