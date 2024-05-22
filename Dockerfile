@@ -1,3 +1,4 @@
+# Stage 1: Build the Go application
 FROM golang:1.19 AS builder
 
 # Set the working directory inside the container
@@ -10,7 +11,7 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 # Copy the rest of the application code to the working directory
-COPY src/ ./src/
+COPY ./src ./src
 
 # Set the working directory to src
 WORKDIR /app/src
@@ -26,6 +27,9 @@ WORKDIR /root/
 
 # Copy the binary from the builder stage
 COPY --from=builder /app/main .
+
+# Ensure the executable has the right permissions
+RUN chmod +x ./main
 
 # Expose port 8080 to the outside world
 EXPOSE 8080
