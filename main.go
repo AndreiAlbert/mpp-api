@@ -1,11 +1,11 @@
 package main
 
 import (
+	"andreialbert/mpp/src/api/middleware"
+	"andreialbert/mpp/src/api/pet"
+	"andreialbert/mpp/src/api/user"
+	"andreialbert/mpp/src/api/vaccination"
 	"andreialbert/mpp/src/database"
-	"andreialbert/mpp/src/internal/middleware"
-	"andreialbert/mpp/src/internal/pet"
-	"andreialbert/mpp/src/internal/user"
-	"andreialbert/mpp/src/internal/vaccination"
 	"time"
 
 	"github.com/gin-contrib/cors"

@@ -1,7 +1,7 @@
 package user
 
 import (
-	"andreialbert/mpp/src/internal/pet"
+	"andreialbert/mpp/src/api/pet"
 
 	"gorm.io/gorm"
 )
