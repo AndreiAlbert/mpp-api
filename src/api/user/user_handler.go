@@ -48,8 +48,6 @@ func (h *UserHandler) LoginUser(c *gin.Context) {
 		Email: loginReq.Email,
 		Jwt:   token,
 	}
-	maxAge := 24 * 60 * 60
-	c.SetCookie("jwt", token, maxAge, "/", "", true, true)
 	c.JSON(http.StatusOK, loginResp)
 }
 
